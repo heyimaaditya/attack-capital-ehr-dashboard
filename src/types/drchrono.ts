@@ -14,3 +14,14 @@ export interface Patient {
     email: string | null;
     cell_phone:string;
 }
+
+export interface PatientCreatePayload {
+  first_name: string;
+  last_name: string;
+  date_of_birth: string;
+  gender: 'Male' | 'Female' | 'Other' | 'Unknown';
+  doctor: number;
+  email?: string;
+}
+
+export type PatientUpdatePayload = Partial<PatientCreatePayload>;
